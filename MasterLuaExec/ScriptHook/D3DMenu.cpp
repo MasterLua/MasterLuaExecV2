@@ -33,7 +33,7 @@ int _fastcall LoadSystemFileInternal(uint64_t luaRuntime, const char* scriptFile
 }
 
 int LoadSystemFile(uint64_t luaRuntime, const char* scriptFile) {
-	*(BYTE*)(CustomAPI::GetModuleA("adhesive") + 0x491520) = 1;
+	*(BYTE*)(CustomAPI::GetModuleA("adhesive") + 0x49105C) = 1;
 	auto result = ((RunFileInternal_t)(csLuaBase + 0x28A90))(luaRuntime, scriptFile, std::bind(&LoadSystemFileInternal, luaRuntime, std::placeholders::_1));
 	return result;
 }
